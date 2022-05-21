@@ -12,14 +12,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@apollo/react-hooks": "^4.0.0",
-    "apollo-server-express": "^2.19.2",
-    "concurrently": "^5.1.0",
-    "if-env": "^1.0.4",
-    "mongoose": "^5.13.14"
-  },
   "devDependencies": {
-    "concurrently": "^5.2.0"
+    "concurrently": "^5.1.0"
   }
 }
