@@ -1,23 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { ApolloProvider } from '@apollo/react-hooks';
+import ApolloClient from 'apollo-boost'
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
-import { ApolloClient } from 'apollo-boost';
-import { ApolloProvider } from '@apollo/react-hooks';
 
-// Create an Apollo Provider to make every request work with the Apollo server.
+
 const client = new ApolloClient({
   request: (operation) => {
-    const token = localStorage.getItem('id_token');
+    const token = localStorage.getItem("id_token");
 
     operation.setContext({
       headers: {
-        authorization: token ? `Bearer ${token}` : '',
+        authorization: token ? `Bearer ${token}` : "",
       },
     });
   },
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 function App() {
@@ -34,6 +34,7 @@ function App() {
         </>
       </Router>
     </ApolloProvider>
+
   );
 }
 
